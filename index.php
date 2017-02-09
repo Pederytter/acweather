@@ -1,9 +1,21 @@
 <?php 
+	$ogtitle = "Google Weather";
+	$ogurl = "www.Google.dk";
+	$ogimage = "images/google.png";
 	include "includes/header.php";
+	$url = $_GET['url'];
 ?>
 <script>            
-	window.history.pushState("object or string", "Title", "/www.google.dk/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=weather");
+	//window.history.pushState("object or string", "Title", "/www.google.dk/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=weather");
 </script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/da_DK/sdk.js#xfbml=1&version=v2.8&appId=428746910592865";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 	<header>
 		<section id="searchForm">
 				<img src="images/google.png">
@@ -34,6 +46,7 @@
 		</section>
 	</header>
 	<main class="containerSearch">
+		<div class="fb-share-button" data-href="<?php $url ?>" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Del</a></div>
 		<section class="status">
 			<p>Ca. 1.190.000.000 resultater (0,44 sekunder)</p>
 		</section>

@@ -26,5 +26,5 @@ $response = curl_exec($curlObj);
 $json = json_decode($response);
 
 curl_close($curlObj);
-header('location: index.php?'.$json->id);
+header('location: index.php?url='.$json->id);
 ?>
