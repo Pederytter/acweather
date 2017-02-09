@@ -1,6 +1,9 @@
 <?php 
 	include "includes/header.php";
 ?>
+<script>            
+	window.history.pushState("object or string", "Title", "/www.google.dk/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=weather");
+</script>
 	<header>
 		<section id="searchForm">
 				<img src="images/google.png">
