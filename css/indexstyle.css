@@ -1,0 +1,183 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+
+body {
+    background: url("../images/seigaiha.png");
+    font-family: montserrat, arial, verdana;
+}
+
+/* -- header -- */
+
+header {
+    margin: auto;
+    padding: 15px 25px;
+}
+
+
+
+/* -- main -- */
+
+
+
+#weatherform {
+    height: 500px;
+    width: 70%;
+    margin: 50px auto;
+    margin-top: 0;
+    text-align: center;
+    position: relative;
+}
+#weatherform fieldset {
+    background: white;
+    border: 0 none;
+    border-radius: 3px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    box-sizing: border-box;
+    width: 80%;
+    margin: 0 10%;
+    height: 400px;
+
+    /*stacking fieldsets above each other*/
+    position: relative;
+}
+/*Hide all except first fieldset*/
+#weatherform fieldset:not(:first-of-type) {
+    display: none;
+}
+
+.fieldsetwrapper {
+    height: 65%; 
+}
+/*inputs*/
+#weatherform input {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    width: 80%;
+    box-sizing: border-box;
+    color: #2C3E50;
+    font-size: 18px;
+
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    -moz-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;  
+}
+
+#weatherform input:focus {
+    border: 1px solid #000000;
+}
+/*buttons*/
+#weatherform .action-button {
+    width: 100px;
+    background: #3c8fcc;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 1px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+}
+#weatherform .action-button:hover, #weatherform .action-button:focus {
+    background: #2473ad;
+}
+/*headings*/
+#weatherform h2 {
+    font-size: 25px;
+    text-transform: uppercase;
+    color: #1a3d60;
+    margin-bottom: 25px;
+    margin-top: 10px;
+}
+/*progressbar*/
+#progressbar {
+    overflow: hidden;
+    width:80%;
+    margin: auto;
+    margin-bottom: 20px;
+    /*CSS counters to number the steps*/
+    counter-reset: step;
+}
+#progressbar li {
+    list-style-type: none;
+    color: #1a3d60;
+    font-size: 15px;
+    width: 33.33%;
+    float: left;
+    position: relative;
+    
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+}
+#progressbar li:before {
+    content: counter(step);
+    counter-increment: step;
+    width: 25px;
+    line-height: 25px;
+    display: block;
+    font-size: 12px;
+    color: #333;
+    background: white;
+    border-radius: 3px;
+    margin: 0 auto 5px auto;
+}
+/*progressbar connectors*/
+#progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: white;
+    position: absolute;
+    left: -50%;
+    top: 9px;
+    z-index: -1; /*put it behind the numbers*/
+}
+#progressbar li:first-child:after {
+    /*connector not needed before the first step*/
+    content: none; 
+}
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before,  #progressbar li.active:after{
+    background: #3c8fcc;
+    color: white;
+}
+
+
+
+@media all and (min-width: 0px) {
+    #weatherform {
+        width: 100%;
+    }
+    #weatherform fieldset {
+        width: 100%;
+    }
+}
+
+@media all and (min-width: 420px) {
+
+}
+
+
+@media all and (min-width: 768px) {
+    #weatherform {
+        width: 70%;
+    }
+
+    #weatherform fieldset {
+        width: 80%;
+    }
+}
+
+
