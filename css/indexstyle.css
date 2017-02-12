@@ -15,6 +15,7 @@ body {
 header {
     margin: auto;
     padding: 15px 25px;
+    height: 37px;
 }
 
 
@@ -26,8 +27,9 @@ header {
 #weatherform {
     height: 500px;
     width: 70%;
+    max-width: 900px;
     margin: 50px auto;
-    margin-top: 0;
+    margin-top: 15vh;
     text-align: center;
     position: relative;
 }
@@ -95,8 +97,8 @@ header {
     font-size: 25px;
     text-transform: uppercase;
     color: #1a3d60;
-    margin-bottom: 25px;
-    margin-top: 10px;
+    margin-bottom: 45px;
+    margin-top: 25px;
 }
 /*progressbar*/
 #progressbar {
@@ -114,7 +116,7 @@ header {
     width: 33.33%;
     float: left;
     position: relative;
-    
+
     -webkit-transition: all 0.5s;
     -o-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -154,14 +156,65 @@ header {
     color: white;
 }
 
+#mobillogo {
+    background: white;
+    padding-top: 20px;
+    text-align: left;
+    padding-left: 15px;
+}
+
+
+/* -- radio buttons -- */
+label {
+
+}
+
+label > input{ /* HIDE RADIO */
+    visibility: hidden;
+    position: absolute;
+}
+label > img:hover {
+    transform: scale(1.1);
+}
+
+label > input + img{
+    cursor:pointer;
+    border:2px solid transparent;
+    transition: all 0.4s;
+    display: inline-block;
+    width: 40%;
+    padding: 0;
+    margin: 0;
+
+
+}
+label > input:checked + img{
+    transform: scale(1.2);
+}
 
 
 @media all and (min-width: 0px) {
     #weatherform {
         width: 100%;
+        height: 90vh;
+        margin-top: -67px;
+        margin-bottom: 0;
     }
     #weatherform fieldset {
         width: 100%;
+        margin: 0;
+        height: 90vh;
+        box-shadow: none;
+        padding: 90px 0;
+    }
+    .showdesktop {
+        display: none;
+    }
+    .showmobil {
+        display: block;
+    }
+    body {
+        background: white;
     }
 }
 
@@ -171,12 +224,29 @@ header {
 
 
 @media all and (min-width: 768px) {
+    body {
+        background: url("../images/seigaiha.png");
+    }
     #weatherform {
-        width: 70%;
+        height: 600px;
+        width: 95%;
+        max-width: 900px;
+        margin: 50px auto;
+        margin-top: 15vh;
     }
 
     #weatherform fieldset {
-        width: 80%;
+        width: 90%;
+        margin: 0 5%;
+        height: 500px;
+        box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+        padding: 20px 30px;
+    }
+    .showdesktop {
+        display: block;
+    }
+    .showmobil {
+        display: none;
     }
 }
 
