@@ -6,8 +6,5 @@
     $cityDetails = json_decode($cityDetails);
     $array = [$cityIp, $cityDetails->main->temp];
     $array = json_encode($array);
-    // print_r($cityDetails);
-    // echo $cityDetails->main->temp;
-    // print_r($array);
      echo $array;
 ?>

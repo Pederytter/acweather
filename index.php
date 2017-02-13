@@ -13,27 +13,7 @@
     <body>
         <header>
             <h1>AC Weather</h1>
-
         </header>
-    <script>
-            $(document).ready(function(){
-                $("input").keyup(function(){
-                    var city = $("input").val();
-                    var city = city.toString();
-                    var apiFirst = 'http://api.openweathermap.org/data/2.5/weather?q=' + city + ',dk&appid=9e24f0bb5893a49bb7e40a9bf368bc7c&units=metric';
-                    $.getJSON(apiFirst, function(data){
-                        console.log(data);
-                        var test = data.main.temp;
-                        $('#test').html(test);
-                        $.each(data,function(key,val){
-                            if(json_object.hasOwnProperty('main')){
-                                alert(test);
-                            };
-                        });
-                    });
-                }).keyup();
-            });
-        </script>
         <main id="root">
 
 
@@ -48,7 +28,7 @@
                 <fieldset>
                     <h2>Choose Location</h2>
                     <div class="fieldsetwrapper">
-                        <input v-model="city" @keyup="getLocation" type="text" name="location" placeholder="">
+                        <input v-model="city" @keyup="getLocationKeyUp" type="text" name="location" placeholder="">
                         <h3><span>{{city}}</span>: <span>{{degree}}</span></h3>
                         <button type="button" v-on:click="getLocation">Get my location</button> 
                     </div>
@@ -79,7 +59,6 @@
         <footer></footer>
 
         <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
-        <script type="text/javascript" src="js/formscript.js"></script>
         <script type="text/javascript" src="js/vue.js"></script>
         <script src="https://cdn.jsdelivr.net/vue.resource/1.2.0/vue-resource.min.js"></script>
 
@@ -97,33 +76,21 @@
                         this.city = cityName.data[0];
                         this.degree = cityName.data[1];
                         });
+                    },
+                    getLocationKeyUp: function() {
+                        this.$http.post('/mdu/acweather/getLocationKeyUp.php?city='+this.city).then(function(cityTemp){
+                            this.degree = cityTemp.data[0];
+                        });                        
                     }
+                },
+                mounted: function(){
+                        this.$http.get('/mdu/acweather/fetchLocation.php').then(function(cityName){
+                        this.city = cityName.data[0];
+                        this.degree = cityName.data[1];
+                        });
                 },
             });
         </script>
-
-        <script type="text/javascript">
-
-            // $(document).ready(function{
-            //         var city = $("input").val();
-            //         var city = city.toString();
-            //         var apiFirst = 'http://api.openweathermap.org/data/2.5/weather?q=' + city + ',dk&appid=9e24f0bb5893a49bb7e40a9bf368bc7c&units=metric';
-            //         $.getJSON(apiFirst, function(data){
-            //             console.log(data);
-            //             var test = data.main.temp;
-            //             $('#test').html(test);
-            //             $.each(data,function(key,val){
-            //                 if(json_object.hasOwnProperty('main')){
-            //                     alert(test);
-            //                 };
-            //             });
-            //         });
-
-            //     $('#getLocation').click(function{
-
-            //     });
-            // });
-
-        </script>
+                <script type="text/javascript" src="js/formscript.js"></script>
     </body>
 </html>
