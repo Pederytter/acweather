@@ -32,7 +32,6 @@
                         });
                     });
                 }).keyup();
-
             });
         </script>
         <main id="root">
@@ -49,12 +48,9 @@
                 <fieldset>
                     <h2>Choose Location</h2>
                     <div class="fieldsetwrapper">
-                        <input v-model="city" type="text" name="location" placeholder="">
-                        <h3><span>{{city}}</span>: <span id="test"></span></h3>
-                        <p id="city"></p>
-                        <button type="button" @click="getLocation">Get my location</button>
-                        {{city}}
-                        
+                        <input v-model="city" @keyup="getLocation" type="text" name="location" placeholder="">
+                        <h3><span>{{city}}</span>: <span>{{degree}}</span></h3>
+                        <button type="button" v-on:click="getLocation">Get my location</button> 
                     </div>
 
                     <button type="button" name="next" class="next action-button">Next</button>
@@ -88,26 +84,20 @@
         <script src="https://cdn.jsdelivr.net/vue.resource/1.2.0/vue-resource.min.js"></script>
 
         <script type="text/javascript">
+
             var vue = new Vue({
                 el: "#root",
-                data: {
-                    city: "No city chosen",
+                data: { 
+                    city: "Select City",
+                    degree: "",
                 },
                 methods: {
                     getLocation: function(){
-                        $.ajax({
-                            url: "getLocation.php",
-                            success: function(data) {
-                                // var successmessage = "Hey!";
-                                this.city = data;
-                                //$('#city').html(data);
-                            },
-                            error: function(data) {
-                                successmessage = 'Error';
-                                $("#city").text(successmessage);
-                            },
+                        this.$http.get('/mdu/acweather/fetchLocation.php').then(function(cityName){
+                        this.city = cityName.data[0];
+                        this.degree = cityName.data[1];
                         });
-                    },
+                    }
                 },
             });
         </script>
