@@ -34,6 +34,14 @@
 		</script>
 	</head>
 	<body>
+	<?php
+	$ip = $_SERVER('REMOTE_ADDR');
+
+		$record = geoip_record_by_name();
+		if ($record) {
+		    print_r($record);
+		}
+	?>
 		<input type="text" value="Ingen by"> <br>
 		<p id="city"></p> <br>
 		<div class="jsnCall">output json</div>
