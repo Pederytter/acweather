@@ -15,11 +15,9 @@
             <h1>AC Weather</h1>
         </header>
         <main id="root">
-
-
-        <div id="demo"></div>
             <form id="weatherform">
-                <ul id="progressbar">
+                <h1 id="mobillogo" class="showmobil">AC Weather</h1>
+                <ul id="progressbar" class="showdesktop">
                     <li class="active">Location</li>
                     <li>Weather</li>
                     <li>Share</li>
@@ -30,7 +28,7 @@
                     <div class="fieldsetwrapper">
                         <input v-model="city" @keyup="getLocationKeyUp" type="text" name="location" placeholder="">
                         <h3><span>{{city}}</span>: <span>{{degree}}</span></h3>
-                        <button type="button" v-on:click="getLocation">Get my location</button> 
+                        <button type="button" v-on:click="getLocation" class="action-button">Get my location</button> 
                     </div>
 
                     <button type="button" name="next" class="next action-button">Next</button>
@@ -38,7 +36,22 @@
                 <fieldset>
                     <h2>Weather Options</h2>
                     <div class="fieldsetwrapper">
-                        
+                        <label>
+                            <input type="radio" name="radio" value="1" />
+                            <img src="images/1.jpg">
+                        </label>
+                        <label>
+                            <input type="radio" name="radio" value="2" />
+                            <img src="images/2.jpg">
+                        </label>
+                        <label>
+                            <input type="radio" name="radio" value="3" />
+                            <img src="images/3.jpg">
+                        </label>
+                        <label>
+                            <input type="radio" name="radio" value="4" />
+                            <img src="images/4.jpg">
+                        </label>
                     </div>
                     <input type="button" name="previous" class="previous action-button" value="Previous" />
 
@@ -47,11 +60,11 @@
                 <fieldset>
                     <h2>Share Link</h2>
                     <div class="fieldsetwrapper">
-                        
+
                     </div>
                     <input type="button" name="previous" class="previous action-button" value="Previous" />
                 </fieldset>
- 
+
             </form>
 
         </main>
@@ -73,8 +86,8 @@
                 methods: {
                     getLocation: function(){
                         this.$http.get('/mdu/acweather/fetchLocation.php').then(function(cityName){
-                        this.city = cityName.data[0];
-                        this.degree = cityName.data[1];
+                            this.city = cityName.data[0];
+                            this.degree = cityName.data[1];
                         });
                     },
                     getLocationKeyUp: function() {
@@ -84,13 +97,13 @@
                     }
                 },
                 mounted: function(){
-                        this.$http.get('/mdu/acweather/fetchLocation.php').then(function(cityName){
+                    this.$http.get('/mdu/acweather/fetchLocation.php').then(function(cityName){
                         this.city = cityName.data[0];
                         this.degree = cityName.data[1];
-                        });
+                    });
                 },
             });
         </script>
-                <script type="text/javascript" src="js/formscript.js"></script>
+        <script type="text/javascript" src="js/formscript.js"></script>
     </body>
 </html>
