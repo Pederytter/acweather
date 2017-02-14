@@ -93,13 +93,13 @@
 				},
 				methods: {
 					getLocation: function(){
-						this.$http.get('/git/acweather/fetchLocation.php').then(function(cityName){
+						this.$http.get('/mdu/acweather/fetchLocation.php').then(function(cityName){
 							this.city = cityName.data[0];
 							this.degree = cityName.data[1];
 						});
 					},
 					getLocationKeyUp: function() {
-						this.$http.get('/git/acweather/getLocationKeyUp.php?city='+this.city).then(function(cityTemp){
+						this.$http.get('/mdu/acweather/getLocationKeyUp.php?city='+this.city).then(function(cityTemp){
 							this.degree = cityTemp.data[0];
 						});   
 					},
@@ -182,7 +182,6 @@
 					},
 
 					weatherGraph: function() {
-						console.log(this.weatherArray);
                         this.oneDay = this.weatherArray.slice(0, 9);
 						var ctx = document.getElementById('myChart').getContext('2d');
 						var myChart = new Chart(ctx, {
@@ -220,7 +219,7 @@
 				},
 
 				mounted: function(){
-					this.$http.get('/git/acweather/fetchLocation.php').then(function(cityName){
+					this.$http.get('/mdu/acweather/fetchLocation.php').then(function(cityName){
 						this.city = cityName.data[0];
 						this.degree = cityName.data[1];
 					});
