@@ -8,6 +8,7 @@
 body {
     background: url("../images/seigaiha.png");
     font-family: montserrat, arial, verdana;
+    overflow-x: hidden;
 }
 
 /* -- header -- */
