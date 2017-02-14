@@ -15,9 +15,6 @@
             <h1>AC Weather</h1>
         </header>
         <main id="root">
-
-
-        <div id="demo"></div>
             <form id="weatherform">
                 <ul id="progressbar">
                     <li class="active">Location</li>
