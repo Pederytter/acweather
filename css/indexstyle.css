@@ -144,14 +144,14 @@ header {
     position: absolute;
     left: -50%;
     top: 9px;
-    z-index: -1; /*put it behind the numbers*/
+    z-index: -1;
 }
 #progressbar li:first-child:after {
     /*connector not needed before the first step*/
     content: none; 
 }
-/*marking active/completed steps green*/
-/*The number of the step and the connector before it = green*/
+/*marking active/completed steps blue*/
+/*The number of the step and the connector before it = blue*/
 #progressbar li.active:before,  #progressbar li.active:after{
     background: #3c8fcc;
     color: white;
@@ -169,8 +169,8 @@ header {
 label {
 
 }
-
-label > input{ /* HIDE RADIO */
+/* -- hide radio button, use img instead -- */
+label > input{ 
     visibility: hidden;
     position: absolute;
 }
