@@ -30,7 +30,7 @@ header {
     width: 70%;
     max-width: 900px;
     margin: 50px auto;
-    margin-top: 15vh;
+    margin-top: 10vh;
     text-align: center;
     position: relative;
 }
@@ -191,6 +191,38 @@ label > input + img{
 }
 label > input:checked + img{
     transform: scale(1.2);
+}
+
+/*-- citydegree --*/
+
+#citydegree {
+    position: relative;
+    margin-top: 10px;
+}
+
+#citydegree > button {
+    position: absolute;
+    left:40%;
+    width: 20%;
+    top: 0;
+}
+
+#citydegree > h3 {
+    position: absolute;
+    left:40%;
+    width:20%;
+    top: 13px;
+    
+    transition-timing-function: ease-in-out;
+    transition: 1s;
+}
+
+#citydegreeh3.loaded {
+    transform: translateX(50%);
+}
+
+#citydegreebutton.loaded {
+    transform:translateX(-50%);
 }
 
 
