@@ -1,0 +1,252 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+
+body {
+    background: url("../images/seigaiha.png");
+    font-family: montserrat, arial, verdana;
+    overflow-x: hidden;
+}
+
+/* -- header -- */
+
+header {
+    margin: auto;
+    padding: 15px 25px;
+    height: 37px;
+}
+
+
+
+/* -- main -- */
+
+
+
+#weatherform {
+    height: 500px;
+    width: 70%;
+    max-width: 900px;
+    margin: 50px auto;
+    margin-top: 15vh;
+    text-align: center;
+    position: relative;
+}
+#weatherform fieldset {
+    background: white;
+    border: 0 none;
+    border-radius: 3px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    box-sizing: border-box;
+    width: 80%;
+    margin: 0 10%;
+    height: 400px;
+
+    /*stacking fieldsets above each other*/
+    position: relative;
+}
+/*Hide all except first fieldset*/
+#weatherform fieldset:not(:first-of-type) {
+    display: none;
+}
+
+.fieldsetwrapper {
+    height: 65%;
+}
+/*inputs*/
+#weatherform input {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    width: 80%;
+    box-sizing: border-box;
+    color: #2C3E50;
+    font-size: 18px;
+
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    -moz-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;  
+}
+
+#weatherform input:focus {
+    border: 1px solid #000000;
+}
+/*buttons*/
+#weatherform .action-button {
+    width: 100px;
+    background: #3c8fcc;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 1px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+}
+#weatherform .action-button:hover, #weatherform .action-button:focus {
+    background: #2473ad;
+}
+/*headings*/
+#weatherform h2 {
+    font-size: 25px;
+    text-transform: uppercase;
+    color: #1a3d60;
+    margin-bottom: 45px;
+    margin-top: 25px;
+}
+/*progressbar*/
+#progressbar {
+    overflow: hidden;
+    width:80%;
+    margin: auto;
+    margin-bottom: 20px;
+    /*CSS counters to number the steps*/
+    counter-reset: step;
+}
+#progressbar li {
+    list-style-type: none;
+    color: #1a3d60;
+    font-size: 15px;
+    width: 33.33%;
+    float: left;
+    position: relative;
+
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+}
+#progressbar li:before {
+    content: counter(step);
+    counter-increment: step;
+    width: 25px;
+    line-height: 25px;
+    display: block;
+    font-size: 12px;
+    color: #333;
+    background: white;
+    border-radius: 3px;
+    margin: 0 auto 5px auto;
+}
+/*progressbar connectors*/
+#progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: white;
+    position: absolute;
+    left: -50%;
+    top: 9px;
+    z-index: -1; /*put it behind the numbers*/
+}
+#progressbar li:first-child:after {
+    /*connector not needed before the first step*/
+    content: none; 
+}
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before,  #progressbar li.active:after{
+    background: #3c8fcc;
+    color: white;
+}
+
+#mobillogo {
+    background: white;
+    padding-top: 20px;
+    text-align: left;
+    padding-left: 15px;
+}
+
+
+/* -- radio buttons -- */
+label {
+
+}
+
+label > input{ /* HIDE RADIO */
+    visibility: hidden;
+    position: absolute;
+}
+label > img:hover {
+    transform: scale(1.1);
+}
+
+label > input + img{
+    cursor:pointer;
+    border:2px solid transparent;
+    transition: all 0.4s;
+    display: inline-block;
+    width: 10%;
+    padding: 0 5%;
+    margin: 0;
+}
+label > input:checked + img{
+    transform: scale(1.2);
+}
+
+
+@media all and (min-width: 0px) {
+    #weatherform {
+        width: 100%;
+        height: 90vh;
+        margin-top: -67px;
+        margin-bottom: 0;
+    }
+    #weatherform fieldset {
+        width: 100%;
+        margin: 0;
+        height: 90vh;
+        box-shadow: none;
+        padding: 90px 0;
+    }
+    .showdesktop {
+        display: none;
+    }
+    .showmobil {
+        display: block;
+    }
+    body {
+        background: white;
+    }
+}
+
+@media all and (min-width: 420px) {
+
+}
+
+
+@media all and (min-width: 768px) {
+    body {
+        background: url("../images/seigaiha.png");
+    }
+    #weatherform {
+        height: 600px;
+        width: 95%;
+        max-width: 900px;
+        margin: 50px auto;
+        margin-top: 15vh;
+    }
+
+    #weatherform fieldset {
+        width: 90%;
+        margin: 0 5%;
+        height: 500px;
+        box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+        padding: 20px 30px;
+    }
+    .showdesktop {
+        display: block;
+    }
+    .showmobil {
+        display: none;
+    }
+}
+
+

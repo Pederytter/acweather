@@ -9,7 +9,7 @@
             <input type="text" name="qrname">
             <input type="submit" value="click Me" name="submit">
         </form>
-        <button type="" id="getUrl">Click me</button
+        <button type="" id="getUrl">Click me</button>
 
 
     </body>
