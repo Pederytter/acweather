@@ -6,10 +6,42 @@
 @import url(http://fonts.googleapis.com/css?family=Montserrat);
 
 body {
-    background: url("../images/seigaiha.png");
+    background: linear-gradient(90deg, #7590ad, #96ccaf, #9fc9e3, #74cdbc);
+    background-size: 800% 800%;
+
+    -webkit-animation: bodybg 45s ease infinite;
+    -moz-animation: bodybg 45s ease infinite;
+    -o-animation: bodybg 45s ease infinite;
+    animation: bodybg 45s ease infinite;
+
+
     font-family: montserrat, arial, verdana;
     overflow-x: hidden;
 }
+
+
+@-webkit-keyframes bodybg {
+    0%{background-position:93% 0%}
+    50%{background-position:0% 100%}
+    100%{background-position:93% 0%}
+}
+@-moz-keyframes bodybg {
+    0%{background-position:93% 0%}
+    50%{background-position:0% 100%}
+    100%{background-position:93% 0%}
+}
+@-o-keyframes bodybg {
+    0%{background-position:93% 0%}
+    50%{background-position:0% 100%}
+    100%{background-position:93% 0%}
+}
+@keyframes bodybg {
+    0%{background-position:93% 0%}
+    50%{background-position:0% 100%}
+    100%{background-position:93% 0%}
+}
+
+
 
 /* -- header -- */
 
@@ -18,7 +50,9 @@ header {
     padding: 15px 25px;
     height: 37px;
 }
-
+h1{
+    color: #fff;
+}
 
 
 /* -- main -- */
@@ -110,14 +144,16 @@ header {
     margin-bottom: 20px;
     /*CSS counters to number the steps*/
     counter-reset: step;
+
 }
 #progressbar li {
     list-style-type: none;
-    color: #1a3d60;
-    font-size: 15px;
+    color: #fff;
+    font-size: 18px;
     width: 33.33%;
     float: left;
     position: relative;
+
 
     -webkit-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -135,6 +171,11 @@ header {
     background: white;
     border-radius: 3px;
     margin: 0 auto 5px auto;
+    border: solid 1px #fff;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
 }
 /*progressbar connectors*/
 #progressbar li:after {
@@ -146,6 +187,10 @@ header {
     left: -50%;
     top: 9px;
     z-index: -1;
+    -webkit-transition: all 0.1s;
+    -o-transition: all 0.1s;
+    -moz-transition: all 0.1s;
+    transition: all 0.1s;
 }
 #progressbar li:first-child:after {
     /*connector not needed before the first step*/
@@ -213,10 +258,10 @@ label > input:checked + img{
     left:40%;
     width:20%;
     top: 16px;
-    
+
     text-align: left;
     font-size: 1.1em;
-    
+
     transition-timing-function: ease-in-out;
     transition: 1s;
 }
@@ -251,7 +296,7 @@ label > input:checked + img{
         display: block;
     }
     body {
-        background: white;
+
     }
 }
 
@@ -261,9 +306,6 @@ label > input:checked + img{
 
 
 @media all and (min-width: 768px) {
-    body {
-        background: url("../images/seigaiha.png");
-    }
     #weatherform {
         height: 600px;
         width: 95%;
