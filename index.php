@@ -35,9 +35,9 @@
                     <fieldset>
                         <h2>Choose Location</h2>
                         <div class="fieldsetwrapper">
-                            <input v-model="city" @keyup="getLocationKeyUp" type="text" name="location" placeholder="">
+                            <input v-model="city" @keyup="getLocationKeyUp" type="text" name="location" placeholder="" id="cityinput" autocomplete="off">
                             <section id="citydegree">
-                                <h3 id="citydegreeh3"><span>{{city}}</span>: <span>{{degree}}</span></h3>
+                                <h3 id="citydegreeh3"><span id="selectcitytjek">{{city}}</span>: <span>{{degree}}°</span></h3>
                                 
                     
                                 <button id="citydegreebutton" type="button" class="progress-button" data-style="fill" data-horizontal v-on:click="getLocation">Current Location</button>
@@ -135,7 +135,7 @@
                                         instance._stop(1);
                                         clearInterval( interval );
                                     }
-                                }, 200 );
+                                }, 130 );
                         }
                     } );
                 } );

@@ -89,6 +89,7 @@ header {
     cursor: pointer;
     padding: 10px 5px;
     margin: 10px 5px;
+    margin-top: 30px;
 }
 #weatherform .action-button:hover, #weatherform .action-button:focus {
     background: #2473ad;
@@ -98,8 +99,8 @@ header {
     font-size: 25px;
     text-transform: uppercase;
     color: #1a3d60;
-    margin-bottom: 45px;
-    margin-top: 25px;
+    margin-bottom: 15px;
+    margin-top: 20px;
 }
 /*progressbar*/
 #progressbar {
@@ -211,14 +212,17 @@ label > input:checked + img{
     position: absolute;
     left:40%;
     width:20%;
-    top: 13px;
+    top: 16px;
+    
+    text-align: left;
+    font-size: 1.1em;
     
     transition-timing-function: ease-in-out;
     transition: 1s;
 }
 
 #citydegreeh3.loaded {
-    transform: translateX(50%);
+    transform: translateX(70%);
 }
 
 #citydegreebutton.loaded {
