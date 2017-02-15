@@ -53,7 +53,7 @@
 			<p>Ca. 1.190.000.000 results (0,44 seconds)</p>
 		</section>
 		<section class="searchResults">
-			<article class="weather">
+			<article class="weather"> 	
 			<input type="hidden" v-model="city" value="">
 				<h4 class="city" ><?php echo ucfirst($city); ?></h4>
 				<p><?php echo $today; ?></p>
@@ -236,8 +236,11 @@
 
 				mounted: function(){
 					this.weatherGraph();
+					this.weatherArray = [];
+						this.standardValue = 0.2;
 					this.$http.get('/mdu/acweather/fetchLocationGoogle.php?city='+this.city).then(function(cityName){
-						this.degree = cityName.data.main.temp;
+						this.degree = Math.round(cityName.data.main.temp);
+						this.graphDegree = Math.round(cityName.data.main.temp)
 						this.wind = cityName.data.wind.speed;
 						this.humidity = cityName.data.main.humidity;
 						this.weatherDescrip = cityName.data.weather[0].description;
