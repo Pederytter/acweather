@@ -1,7 +1,7 @@
 var vue = new Vue({
     el: "#root",
     data: { 
-        city: "Select City",
+        city: "viby",
         degree: "",
         graphDegree:"",
         humidity: "",
@@ -12,16 +12,17 @@ var vue = new Vue({
         ii: "",
         standardValue: 0.2,
         oneDay: "",
+        option: "1",
     },
     methods: {
         getLocation: function(){
-            this.$http.get('/mdu/acweather2/acweather/processLocation.php?action=2').then(function(cityName){
+            this.$http.get('/mdu/acweather/processLocation.php?action=2').then(function(cityName){
                 this.city = cityName.data.name;
                 this.degree = Math.round(cityName.data.main.temp);
             });
         },
         getLocationKeyUp: function() {
-            this.$http.get('/mdu/acweather2/acweather/processLocation.php?action=1&city='+this.city).then(function(cityTemp){
+            this.$http.get('/mdu/acweather/processLocation.php?action=1&city='+this.city).then(function(cityTemp){
                 this.degree = cityTemp.data.main.temp;
             });   
         },
@@ -149,10 +150,7 @@ var vue = new Vue({
             }
     },
     mounted: function(){
-            this.weatherGraph();
-            this.weatherArray = [];
-                this.standardValue = 0.2;
-            this.$http.get('/mdu/acweather2/acweather/processLocation.php?action=2&city='+this.city).then(function(cityName){
+            this.$http.get('/mdu/acweather/processLocation.php?action=2&city='+this.city).then(function(cityName){
                 this.city = cityName.data.name;
                 this.degree = Math.round(cityName.data.main.temp);
                 this.graphDegree = Math.round(cityName.data.main.temp)
@@ -160,5 +158,8 @@ var vue = new Vue({
                 this.humidity = cityName.data.main.humidity;
                 this.weatherDescrip = cityName.data.weather[0].description;
             });
+            if(this.option == 1) {
+                this.sunny();
+            }
     },
 });
