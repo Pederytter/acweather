@@ -37,22 +37,50 @@
 				<fieldset>
 					<h2>Weather Options</h2>
 					<div class="fieldsetwrapper">
+						<section id="weatherOpt">
+							<label>
+								<input type="radio" name="radio" value="1" />
+								<img class="weatherOption" @click="sunny" src="http://ssl.gstatic.com/onebox/weather/64/sunny.png">
+							</label>
+							<label>
+								<input type="radio" name="radio" value="2" />
+								<img class="weatherOption" @click="cold" src="http://ssl.gstatic.com/onebox/weather/64/sunny.png">
+							</label>
+							<label>
+								<input type="radio" name="radio" value="3" />
+								<img class="weatherOption" src="http://ssl.gstatic.com/onebox/weather/64/sunny.png">
+							</label>
+							<label>
+								<input type="radio" name="radio" value="4" />
+								<img class="weatherOption" src="http://ssl.gstatic.com/onebox/weather/64/sunny.png">
+							</label>
+						</section>
+						<section>
 						<label>
 							<input type="radio" name="radio" value="1" />
-							<img @click="sunny" src="http://ssl.gstatic.com/onebox/weather/64/sunny.png">
+							<img class="weatherDay" @click="sunnyDayOne" src="http://ssl.gstatic.com/onebox/weather/64/sunny.png">
 						</label>
 						<label>
 							<input type="radio" name="radio" value="2" />
-							<img @click="cold" src="http://ssl.gstatic.com/onebox/weather/64/sunny.png">
+							<img class="weatherDay" @click="sunnyDayTwo" src="http://ssl.gstatic.com/onebox/weather/64/sunny.png">
 						</label>
 						<label>
 							<input type="radio" name="radio" value="3" />
-							<img src="http://ssl.gstatic.com/onebox/weather/64/sunny.png">
+							<img class="weatherDay" @click="sunnyDayThree" src="http://ssl.gstatic.com/onebox/weather/64/sunny.png">
 						</label>
 						<label>
 							<input type="radio" name="radio" value="4" />
-							<img src="http://ssl.gstatic.com/onebox/weather/64/sunny.png">
+							<img class="weatherDay" @click="sunnyDayFour" src="http://ssl.gstatic.com/onebox/weather/64/sunny.png">
 						</label>
+						<label>
+							<input type="radio" name="radio" value="4" />
+							<img class="weatherDay" src="http://ssl.gstatic.com/onebox/weather/64/sunny.png">
+						</label>
+						<label>
+							<input type="radio" name="radio" value="4" />
+							<img class="weatherDay" src="http://ssl.gstatic.com/onebox/weather/64/sunny.png">
+						</label>
+						</section>
 						<canvas height="200px" width="1000px" id="myChart"></canvas>
 					</div>
 					<input type="button" name="previous" class="previous action-button" value="Previous" />
@@ -89,7 +117,7 @@
 					i: "",
 					ii: "",
 					standardValue: 0.2,
-                    oneDay: "",
+					oneDay: "",
 				},
 				methods: {
 					getLocation: function(){
@@ -105,6 +133,7 @@
 					},
 					sunny: function(){
 						this.graphDegree = this.degree;
+						this.weatherArray = [];
 						for (this.i = 0; this.i < 56; this.i++){
 							var d = 0.4;
 							this.standardValue = this.standardValue + 0.05;
@@ -129,7 +158,7 @@
 							} else {
 								var dayRange = 0;
 							}
-							
+
 							this.graphDegree = d * this.standardValue +  this.graphDegree + dayRange;	
 							this.weatherArray.push(this.graphDegree);	
 							console.log(this.i);		
@@ -137,13 +166,13 @@
 
 						}
 						this.weatherGraph();
-						this.weatherArray = [];
 						this.standardValue = 0.2;
 						this.graphDegree = this.degree;
 					},
 
 					cold: function(){
 						this.graphDegree = this.degree;
+						this.weatherArray = [];
 						for (this.i = 0; this.i < 56; this.i++){
 							var d = 0.4;
 							this.standardValue = this.standardValue - 0.05;
@@ -168,7 +197,7 @@
 							} else {
 								var dayRange = 0;
 							}
-							
+
 							this.graphDegree = d * this.standardValue +  this.graphDegree + dayRange;	
 							this.weatherArray.push(this.graphDegree);	
 							console.log(this.i);		
@@ -176,13 +205,29 @@
 
 						}
 						this.weatherGraph();
-						this.weatherArray = [];
 						this.standardValue = 0.2;
 						this.graphDegree = this.degree;
 					},
+					
+					sunnyDayOne: function(){
+						this.oneDay = this.weatherArray.slice(0, 9);
+						this.weatherGraph();
+						
+					},
+					sunnyDayTwo: function(){
+						this.oneDay = this.weatherArray.slice(9, 18);
+						this.weatherGraph();
+					},
+					sunnyDayThree: function(){
+						this.oneDay = this.weatherArray.slice(18, 27);
+						this.weatherGraph();
+					},
+					sunnyDayFour: function(){
+						this.oneDay = this.weatherArray.slice(27, 36);
+						this.weatherGraph();
+					},
 
 					weatherGraph: function() {
-                        this.oneDay = this.weatherArray.slice(0, 9);
 						var ctx = document.getElementById('myChart').getContext('2d');
 						var myChart = new Chart(ctx, {
 							type: 'line',
@@ -213,8 +258,7 @@
 								}]
 							}
 						})
-						this.weatherArray = [];
-						}
+					}
 
 				},
 

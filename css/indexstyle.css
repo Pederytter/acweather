@@ -192,6 +192,15 @@ label > input:checked + img{
 }
 
 
+
+section#weatherOpt {
+    width: 100%;
+}
+
+.weatherDay {
+	width: 6%;
+    padding: 1% 3%;
+}
 @media all and (min-width: 0px) {
     #weatherform {
         width: 100%;
