@@ -11,6 +11,7 @@
         <link rel="stylesheet" type="text/css" href="css/normalize.css" />
         <link rel="stylesheet" type="text/css" href="css/component.css" />
         <script src="js/modernizr.custom.js"></script>
+
     </head>
     <body>
         <div class="container">
@@ -113,7 +114,9 @@
                     <fieldset>
                         <h2>Share Link</h2>
                         <div class="fieldsetwrapper">
-
+                            <div id="fb-root"></div>
+                                <p>Your url: {{fakeUrl}}</p>
+                            <button type="button" @click="getFakeUrl">Get url</button>
                         </div>
                         <input type="button" name="previous" class="previous action-button" value="Previous" />
                     </fieldset>
@@ -133,7 +136,15 @@
             <script src="js/progressButton.js"></script>
             <script src="js/loaded.js"></script>
 
-
+        <script type="text/javascript">
+           (function(d, s, id) {
+                  var js, fjs = d.getElementsByTagName(s)[0];
+                  if (d.getElementById(id)) return;
+                  js = d.createElement(s); js.id = id;
+                  js.src = "//connect.facebook.net/da_DK/sdk.js#xfbml=1&version=v2.8&appId=428746910592865";
+                  fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+        </script>
             <script>
                 [].slice.call( document.querySelectorAll( 'button.progress-button' ) ).forEach( function( bttn ) {
                     new ProgressButton( bttn, {
@@ -152,6 +163,9 @@
                     } );
                 } );
             </script>
+
         </div>
+ 
+
     </body>
 </html>

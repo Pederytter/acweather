@@ -1,8 +1,8 @@
 var vue = new Vue({
 	el: "#root",
 	data: { 
-		city: "viby",
-		degree: "",
+		city: "",
+		degree: " ",
 		graphDegree:"",
 		humidity: "",
 		wind: "",
@@ -12,23 +12,30 @@ var vue = new Vue({
 		ii: "",
 		standardValue: 0.2,
 		oneDay: "",
-		option: "1",
+		option: "",
 		currentDay: "",
 		activeId: null,
+		fakeUrl: "",
 	},
 	methods: {
+		getFakeUrl: function (){
+			this.$http.get('/mdu/acweather2/acweather/process.php?city='+this.city+'&option='+this.option).then(function(cityName){
+				this.fakeUrl = cityName.data;
+			});			
+		},
 		getLocation: function(){
-			this.$http.get('/mdu/acweather/processLocation.php?action=2').then(function(cityName){
+			this.$http.get('/mdu/acweather2/acweather/processLocation.php?action=2').then(function(cityName){
 				this.city = cityName.data.name;
 				this.degree = Math.round(cityName.data.main.temp);
 			});
 		},
 		getLocationKeyUp: function() {
-			this.$http.get('/mdu/acweather/processLocation.php?action=1&city='+this.city).then(function(cityTemp){
+			this.$http.get('/mdu/acweather2/acweather/processLocation.php?action=1&city='+this.city).then(function(cityTemp){
 				this.degree = cityTemp.data.main.temp;
 			});   
 		},
 		sunny: function(){
+			this.option = 1;
 			this.graphDegree = this.degree;
 			$('.allDays').css('display', 'block');
 			this.weatherArray = [];
@@ -60,7 +67,7 @@ var vue = new Vue({
 				this.graphDegree = parseFloat(this.graphDegree);
 				this.graphDegree = this.graphDegree.toFixed(2);
 				this.weatherArray.push(this.graphDegree);	
-				console.log(this.graphDegree);		
+				//console.log(this.graphDegree);		
 				this.graphDegree =  this.graphDegree - dayRange;	
 			}
 			this.dayOne();
@@ -69,6 +76,7 @@ var vue = new Vue({
 			this.activeLink('link-1');
 		},
 		cold: function(){
+			this.option = 2;
 			this.graphDegree = this.degree;
 			$('.allDays').css('display', 'block');
 			this.weatherArray = [];
@@ -175,23 +183,30 @@ var vue = new Vue({
 			},
 
 		activeLink(linkIdent) {
-			console.log(linkIdent);
+			//console.log(linkIdent);
 			if(linkIdent != this.activeId){
 			this.activeId = this.activeId === linkIdent ? null : linkIdent
 			}
-		}
+		},
 	},
 	mounted: function(){
-		this.$http.get('/mdu/acweather/processLocation.php?action=2&city='+this.city).then(function(cityName){
-			this.city = cityName.data.name;
-			this.degree = Math.round(cityName.data.main.temp);
+		console.log(this.city);
+		// this.$http.get('/mdu/acweather2/acweather/processLocation.php?action=2&city='+this.city).then(function(cityName){
+		// 	this.city = cityName.data.name;
+		// 	this.degree = Math.round(cityName.data.main.temp);
+		// 	this.graphDegree = Math.round(cityName.data.main.temp)
+		// 	this.wind = cityName.data.wind.speed;
+		// 	this.humidity = cityName.data.main.humidity;
+		// 	this.weatherDescrip = cityName.data.weather[0].description;
+		// });
+		this.$http.get('/mdu/acweather2/acweather/processLocation.php?action=1&city='+this.city).then(function(cityName){
+			//this.degree = Math.round(cityName.data.main.temp);
+			this.degree = cityName.data.main.temp;
 			this.graphDegree = Math.round(cityName.data.main.temp)
 			this.wind = cityName.data.wind.speed;
 			this.humidity = cityName.data.main.humidity;
 			this.weatherDescrip = cityName.data.weather[0].description;
+			console.log(this.city+" mounted "+this.degree);
 		});
-		if(this.option == 5) {
-			this.sunny();
-		}
 	},
 });

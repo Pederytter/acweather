@@ -158,12 +158,23 @@
 
 		</section>
 	</main>
+
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script type="text/javascript" src="js/vue.js"></script>
 		<script src="https://cdn.jsdelivr.net/vue.resource/1.2.0/vue-resource.min.js"></script>
 		<script type="text/javascript" src="js/scripts.js"></script>
+			<script type="text/javascript">
+			vue.city = "<?php echo $_GET['city']; ?>";
+			var option = "<?php echo $option; ?>";
+			console.log(vue.city);
+			if(option == 2) {
+				vue.cold();
+			} else if(option == 1){
+				vue.sunny();
+			}
+		</script>
 
 <?php 
 	// include "includes/footer.php";

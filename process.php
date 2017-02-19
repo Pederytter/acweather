@@ -1,8 +1,9 @@
 
 <?php
-$ranString = password_hash('googleWeatherApiForFunFunFun', PASSWORD_DEFAULT);
+$city = $_GET['city'];
+$option = $_GET['option'];
 // This is the URL you want to shorten
-$longUrl = 'malthebp.dk/eaaa/acweather/google.php?'.$ranString;
+$longUrl = 'malthebp.dk/eaaa/acweather/indexGoogle.php?city='.$city.'&option='.$option;
 
 // Get API key from : http://code.google.com/apis/console/
 $apiKey = 'AIzaSyCZcJ0mw1KM-enBL1QUDHjvJdgsAlHQMwU';
@@ -26,5 +27,5 @@ $response = curl_exec($curlObj);
 $json = json_decode($response);
 
 curl_close($curlObj);
-header('location: index.php?url='.$json->id);
+echo $json->id;
 ?>
