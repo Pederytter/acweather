@@ -49,9 +49,7 @@
 		</section>
 	</header>
 	<main class="containerSearch" id="root">	
-<!-- 			<input type="hidden" v-model="city" value="<?php echo $city; ?>">
-			<input type="hidden" v-model="option" value="<?php echo $option; ?>"> -->
-		<div class="fb-share-button" data-href="<?php $url ?>" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Del</a></div>
+
 		<section class="status">
 			<p>Ca. 1.190.000.000 results (0,44 seconds) {{city}}{{option}}</p>
 		</section>
@@ -60,7 +58,6 @@
 				<h4 class="city" ><?php echo ucfirst($city); ?></h4>
 				<p><?php echo $today; ?></p>
 				<p>{{weatherDescrip}}</p>
-				<button type="button" @click="cold">Klik</button>
 				<div class="seperator"></div>
 				<section class="weatherInfo">
 					<div>
@@ -165,10 +162,10 @@
 		<script type="text/javascript" src="js/vue.js"></script>
 		<script src="https://cdn.jsdelivr.net/vue.resource/1.2.0/vue-resource.min.js"></script>
 		<script type="text/javascript" src="js/scripts.js"></script>
-			<script type="text/javascript">
+		<script type="text/javascript">
 			vue.city = "<?php echo $_GET['city']; ?>";
 			var option = "<?php echo $option; ?>";
-			console.log(vue.city);
+			vue.onStart();
 			if(option == 2) {
 				vue.cold();
 			} else if(option == 1){
@@ -177,5 +174,5 @@
 		</script>
 
 <?php 
-	// include "includes/footer.php";
+	 include "includes/footer.php";
 ?>

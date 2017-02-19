@@ -30,6 +30,7 @@
                     <fieldset>
                         <h2>Choose Location</h2>
                         <div class="fieldsetwrapper">
+                        <p>Choose what danish city you want to prank people in. You can either write a city or get your current. </p>
                             <input v-model="city" @keyup="getLocationKeyUp" type="text" name="location" placeholder="" id="cityinput" autocomplete="off">
                             <section id="citydegree">
                                 <h3 id="citydegreeh3"><span id="selectcitytjek">{{city}}</span>: <span>{{degree}}°</span></h3>
@@ -41,6 +42,7 @@
                     <fieldset>
                         <h2>Weather Options</h2>
                         <div class="fieldsetwrapper">
+                        <p>Choose whether you want to have heatweave or extreme cold. Its up to you!</p>
 							<section id="weatherOpt">
 								<label>
 									<input type="radio" name="radio" value="1" />
@@ -114,9 +116,15 @@
                     <fieldset>
                         <h2>Share Link</h2>
                         <div class="fieldsetwrapper">
-                            <div id="fb-root"></div>
-                                <p>Your url: {{fakeUrl}}</p>
+                        <p>Now it's time to share your newly made prank forecast. Choose to either share it on Facebook or get your own link, you can use copy and paste yo your friends! Have fun!</p>
+                        <section class="shareSection">
                             <button type="button" @click="getFakeUrl">Get url</button>
+                            <h3>Your url:<br> {{fakeUrl}}</h3>
+                        </section>
+                        <section v-if="fakeUrl != ''" class="shareSection">
+                        <p>Share on Facebook</p>
+                            <div class="fb-share-button" data-href="<?php $url ?>" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" :href="facebookLink">Share your link</a></div>
+                        </section>
                         </div>
                         <input type="button" name="previous" class="previous action-button" value="Previous" />
                     </fieldset>
@@ -146,6 +154,7 @@
                 }(document, 'script', 'facebook-jssdk'));
         </script>
             <script>
+            vue.onStartIp();
                 [].slice.call( document.querySelectorAll( 'button.progress-button' ) ).forEach( function( bttn ) {
                     new ProgressButton( bttn, {
                         callback : function( instance ) {

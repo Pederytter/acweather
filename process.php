@@ -1,6 +1,6 @@
 
 <?php
-$city = $_GET['city'];
+$city = str_replace(' ', '', $_GET['city']);
 $option = $_GET['option'];
 // This is the URL you want to shorten
 $longUrl = 'malthebp.dk/eaaa/acweather/indexGoogle.php?city='.$city.'&option='.$option;

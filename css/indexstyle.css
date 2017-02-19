@@ -358,4 +358,8 @@ label > input:checked + img{
     }
 }
 
+.shareSection {
+    margin: 25px 0px;
+}
+
 
