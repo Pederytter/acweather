@@ -13,9 +13,10 @@ var vue = new Vue({
 		standardValue: 0.2,
 		oneDay: "",
 		option: "",
-		currentDay: "",
+		daysSorted: [],
 		activeId: null,
 		fakeUrl: "",
+		days: ['sat', 'sun', 'mon', 'tue', 'wed', 'thu', 'fri'],
 	},
 	methods: {
 		getFakeUrl: function (){
@@ -81,6 +82,7 @@ var vue = new Vue({
 				this.graphDegree =  this.graphDegree - dayRange;	
 			}
 			this.dayOne();
+			this.dayName();
 			this.standardValue = 0.2;
 			this.graphDegree = this.degree;
 			this.activeLink('link-1');
@@ -163,6 +165,17 @@ var vue = new Vue({
 			this.oneDay = this.weatherArray.slice(54, 63);
 			this.weatherGraph();
 		},
+		dayName: function(){
+			var today = new Date();
+			var daysSorted = [];
+
+			for(var i = 0; i < 7; i++)
+			{
+				var newDate = new Date(today.setDate(today.getDate() + 1));
+				this.daysSorted.push(this.days[newDate.getDay()]);
+			}
+
+		},
 		weatherGraph: function() {
 			var ctx = $('#myChart').get(0).getContext('2d');
 			var myChart = new Chart(ctx, {
@@ -205,7 +218,7 @@ var vue = new Vue({
 		activeLink(linkIdent) {
 			//console.log(linkIdent);
 			if(linkIdent != this.activeId){
-			this.activeId = this.activeId === linkIdent ? null : linkIdent
+				this.activeId = this.activeId === linkIdent ? null : linkIdent
 			}
 		},
 	},
