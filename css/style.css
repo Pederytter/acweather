@@ -186,6 +186,7 @@ a.btn {
     color: #878787;
 }
 
+
 .weather h4.city {
 	font-size: x-large;
 	font-weight: lighter;
@@ -262,4 +263,9 @@ a.btn {
 }
 .seperator{
 	padding:20px 0 0;
+}
+
+.day {
+    display: inline-block;
+    width: 12%;
 }

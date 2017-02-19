@@ -212,6 +212,28 @@ h1{
 
 
 /* -- radio buttons -- */
+
+.day {
+	display: inline-block;
+    width: 12%;
+    padding: 7px 5px 15px 5px;
+}
+
+.allDays {
+	display: none;
+}
+
+.dayTemp {
+	font-size: 13px;
+    color: #404040;
+}
+
+.allDays .active {
+    background-color: #f1f1f1;
+    border: 1px solid #d2d2d2;
+    border-radius: 3px;
+}
+
 label {
 
 }
@@ -224,14 +246,21 @@ label > img:hover {
     transform: scale(1.1);
 }
 
+label > .weatherDay{
+	padding: 0px 0%;
+    width: 8%;
+    margin: 0 2%;
+}
+
+
 label > input + img{
     cursor:pointer;
     border:2px solid transparent;
     transition: all 0.4s;
     display: inline-block;
-    width: 40%;
-    padding: 0;
-    margin: 0;
+    width: 10%;
+    /* padding: 0 5%; */
+    margin: 0 3%;
 
 
 }

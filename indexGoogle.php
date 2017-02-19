@@ -78,8 +78,61 @@
 					</article>
 				</section>
 				<div>
-			<canvas height="200px" width="600px" id="myChart"></canvas>
-				<div style="padding-top: 7px; white-space: nowrap; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px); transition: -webkit-transform 0ms ease-in-out;" id="wob_dp" data-ved="0ahUKEwjXhMr1-oDSAhXCzxQKHWbQAHoQimsIGjAA"><div class="wob_df wob_ds" style="display:inline-block;line-height:1;text-align:center;-webkit-transition-duration:200ms,200ms,200ms;-webkit-transition-property:background-image,border,font-weight;font-weight:13px;height:90px;width:73px" wob_di="0" data-ved="0ahUKEwjXhMr1-oDSAhXCzxQKHWbQAHoQi2sIGygAMAA"><div class="vk_lgy" style="padding-top:7px;line-height:15px" aria-label="onsdag">ons.</div><div style="display:inline-block"><img style="margin:1px 4px 0;height:48px;width:48px" alt="Snebyger" src="//ssl.gstatic.com/onebox/weather/48/snow_light.png" ></div><div style="font-weight:normal;line-height:15px;font-size:13px"><div class="vk_gy" style="display:inline-block;padding-right:5px"><span class="wob_t" style="display:inline">-2</span><span class="wob_t" style="display:none">29</span>°</div><div class="vk_lgy" style="display:inline-block"><span class="wob_t" style="display:inline">-3</span><span class="wob_t" style="display:none">27</span>°</div></div></div><div class="wob_df" style="display:inline-block;line-height:1;text-align:center;-webkit-transition-duration:200ms,200ms,200ms;-webkit-transition-property:background-image,border,font-weight;font-weight:13px;height:90px;width:73px" wob_di="1" data-ved="0ahUKEwjXhMr1-oDSAhXCzxQKHWbQAHoQi2sIHCgBMAA"><div class="vk_lgy" style="padding-top:7px;line-height:15px" aria-label="torsdag">tor.</div><div style="display:inline-block"><img style="margin:1px 4px 0;height:48px;width:48px" alt="Skyet" src="//ssl.gstatic.com/onebox/weather/48/cloudy.png" ></div><div style="font-weight:normal;line-height:15px;font-size:13px"><div class="vk_gy" style="display:inline-block;padding-right:5px"><span class="wob_t" style="display:inline">-1</span><span class="wob_t" style="display:none">31</span>°</div><div class="vk_lgy" style="display:inline-block"><span class="wob_t" style="display:inline">-2</span><span class="wob_t" style="display:none">28</span>°</div></div></div><div class="wob_df" style="display:inline-block;line-height:1;text-align:center;-webkit-transition-duration:200ms,200ms,200ms;-webkit-transition-property:background-image,border,font-weight;font-weight:13px;height:90px;width:73px" wob_di="2" data-ved="0ahUKEwjXhMr1-oDSAhXCzxQKHWbQAHoQi2sIHSgCMAA"><div class="vk_lgy" style="padding-top:7px;line-height:15px" aria-label="fredag">fre.</div><div style="display:inline-block"><img style="margin:1px 4px 0;height:48px;width:48px" alt="Skyet" src="//ssl.gstatic.com/onebox/weather/48/cloudy.png" ></div><div style="font-weight:normal;line-height:15px;font-size:13px"><div class="vk_gy" style="display:inline-block;padding-right:5px"><span class="wob_t" style="display:inline">1</span><span class="wob_t" style="display:none">33</span>°</div><div class="vk_lgy" style="display:inline-block"><span class="wob_t" style="display:inline">-2</span><span class="wob_t" style="display:none">28</span>°</div></div></div><div class="wob_df" style="display:inline-block;line-height:1;text-align:center;-webkit-transition-duration:200ms,200ms,200ms;-webkit-transition-property:background-image,border,font-weight;font-weight:13px;height:90px;width:73px" wob_di="3" data-ved="0ahUKEwjXhMr1-oDSAhXCzxQKHWbQAHoQi2sIHigDMAA"><div class="vk_lgy" style="padding-top:7px;line-height:15px" aria-label="lørdag">lør.</div><div style="display:inline-block"><img style="margin:1px 4px 0;height:48px;width:48px" alt="Mest skyet" src="//ssl.gstatic.com/onebox/weather/48/partly_cloudy.png" ></div><div style="font-weight:normal;line-height:15px;font-size:13px"><div class="vk_gy" style="display:inline-block;padding-right:5px"><span class="wob_t" style="display:inline">1</span><span class="wob_t" style="display:none">33</span>°</div><div class="vk_lgy" style="display:inline-block"><span class="wob_t" style="display:inline">-2</span><span class="wob_t" style="display:none">28</span>°</div></div></div><div class="wob_df" style="display:inline-block;line-height:1;text-align:center;-webkit-transition-duration:200ms,200ms,200ms;-webkit-transition-property:background-image,border,font-weight;font-weight:13px;height:90px;width:73px" wob_di="4" data-ved="0ahUKEwjXhMr1-oDSAhXCzxQKHWbQAHoQi2sIHygEMAA"><div class="vk_lgy" style="padding-top:7px;line-height:15px" aria-label="søndag">søn.</div><div style="display:inline-block"><img style="margin:1px 4px 0;height:48px;width:48px" alt="Skyet" src="//ssl.gstatic.com/onebox/weather/48/cloudy.png" ></div><div style="font-weight:normal;line-height:15px;font-size:13px"><div class="vk_gy" style="display:inline-block;padding-right:5px"><span class="wob_t" style="display:inline">0</span><span class="wob_t" style="display:none">32</span>°</div><div class="vk_lgy" style="display:inline-block"><span class="wob_t" style="display:inline">-3</span><span class="wob_t" style="display:none">27</span>°</div></div></div><div class="wob_df" style="display:inline-block;line-height:1;text-align:center;-webkit-transition-duration:200ms,200ms,200ms;-webkit-transition-property:background-image,border,font-weight;font-weight:13px;height:90px;width:73px" wob_di="5" data-ved="0ahUKEwjXhMr1-oDSAhXCzxQKHWbQAHoQi2sIICgFMAA"><div class="vk_lgy" style="padding-top:7px;line-height:15px" aria-label="mandag">man.</div><div style="display:inline-block"><img style="margin:1px 4px 0;height:48px;width:48px" alt="Pletvist overskyet" src="//ssl.gstatic.com/onebox/weather/48/partly_cloudy.png" ></div><div style="font-weight:normal;line-height:15px;font-size:13px"><div class="vk_gy" style="display:inline-block;padding-right:5px"><span class="wob_t" style="display:inline">0</span><span class="wob_t" style="display:none">32</span>°</div><div class="vk_lgy" style="display:inline-block"><span class="wob_t" style="display:inline">-3</span><span class="wob_t" style="display:none">27</span>°</div></div></div><div class="wob_df" style="display:inline-block;line-height:1;text-align:center;-webkit-transition-duration:200ms,200ms,200ms;-webkit-transition-property:background-image,border,font-weight;font-weight:13px;height:90px;width:73px" wob_di="6" data-ved="0ahUKEwjXhMr1-oDSAhXCzxQKHWbQAHoQi2sIISgGMAA"><div class="vk_lgy" style="padding-top:7px;line-height:15px" aria-label="tirsdag">tir.</div><div style="display:inline-block"><img style="margin:1px 4px 0;height:48px;width:48px" alt="Solskin" src="//ssl.gstatic.com/onebox/weather/48/sunny.png" ></div><div style="font-weight:normal;line-height:15px;font-size:13px"><div class="vk_gy" style="display:inline-block;padding-right:5px"><span class="wob_t" style="display:inline">3</span><span class="wob_t" style="display:none">37</span>°</div><div class="vk_lgy" style="display:inline-block"><span class="wob_t" style="display:inline">-3</span><span class="wob_t" style="display:none">26</span>°</div></div></div><div class="wob_df" style="display:inline-block;line-height:1;text-align:center;-webkit-transition-duration:200ms,200ms,200ms;-webkit-transition-property:background-image,border,font-weight;font-weight:13px;height:90px;width:73px" wob_di="7" data-ved="0ahUKEwjXhMr1-oDSAhXCzxQKHWbQAHoQi2sIIigHMAA"><div class="vk_lgy" style="padding-top:7px;line-height:15px" aria-label="onsdag">ons.</div><div style="display:inline-block"><img style="margin:1px 4px 0;height:48px;width:48px" alt="Overvejende solskin" src="//ssl.gstatic.com/onebox/weather/48/partly_cloudy.png"></div><div style="font-weight:normal;line-height:15px;font-size:13px"><div class="vk_gy" style="display:inline-block;padding-right:5px"><span class="wob_t" style="display:inline">3</span><span class="wob_t" style="display:none">37</span>°</div><div class="vk_lgy" style="display:inline-block"><span class="wob_t" style="display:inline">-2</span><span class="wob_t" style="display:none">28</span>°</div></div></div></div>
+							<section id="weatherPreview">
+								<canvas height="200px" width="750px" id="myChart"></canvas>
+								<section class="allDays">
+									<div class="day">
+										<p>{{currentDay}}</p>
+										<img class="weatherDay" @click="dayOne" src="http://ssl.gstatic.com/onebox/weather/64/sunny.png">
+										<div class="dayTemp">
+											<span class="dayTempMax">{{weatherArray[0]}}</span>
+											<span class="dayTempMin">{{weatherArray[8]}}</span>
+										</div>
+									</div>
+									<div class="day">
+										<img class="weatherDay" @click="dayTwo" src="http://ssl.gstatic.com/onebox/weather/64/sunny.png">
+										<div class="dayTemp">
+											<span class="dayTempMax">{{weatherArray[9]}}</span>
+											<span class="dayTempMin">{{weatherArray[16]}}</span>
+										</div>
+									</div>
+									<div class="day">
+										<img class="weatherDay" @click="dayThree" src="http://ssl.gstatic.com/onebox/weather/64/sunny.png">
+										<div class="dayTemp">
+											<span class="dayTempMax">{{weatherArray[17]}}</span>
+											<span class="dayTempMin">{{weatherArray[24]}}</span>
+										</div>
+									</div>
+									<div class="day">
+										<img class="weatherDay" @click="dayFour" src="http://ssl.gstatic.com/onebox/weather/64/sunny.png">
+										<div class="dayTemp">
+											<span class="dayTempMax">{{weatherArray[25]}}</span>
+											<span class="dayTempMin">{{weatherArray[32]}}</span>
+										</div>
+									</div>
+									<div class="day">
+										<img class="weatherDay" @click="dayFive" src="http://ssl.gstatic.com/onebox/weather/64/sunny.png">
+										<div class="dayTemp">
+											<span class="dayTempMax">{{weatherArray[33]}}</span>
+											<span class="dayTempMin">{{weatherArray[40]}}</span>
+										</div>
+									</div>
+									<div class="day">
+										<img class="weatherDay" @click="daySix" src="http://ssl.gstatic.com/onebox/weather/64/sunny.png">
+										<div class="dayTemp">
+											<span class="dayTempMax">{{weatherArray[41]}}</span>
+											<span class="dayTempMin">{{weatherArray[48]}}</span>
+										</div>
+									</div>
+									<div class="day">
+										<img class="weatherDay" @click="daySeven" src="http://ssl.gstatic.com/onebox/weather/64/sunny.png">
+										<div class="dayTemp">
+											<span class="dayTempMax">{{weatherArray[49]}}</span>
+											<span class="dayTempMin">{{weatherArray[56]}}</span>
+										</div>
+									</div>
+								</section>
+							</section>
 			</article>
 			<?php
 			if($option == 1){
