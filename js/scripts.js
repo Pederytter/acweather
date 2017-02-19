@@ -13,10 +13,14 @@ var vue = new Vue({
 		standardValue: 0.2,
 		oneDay: "",
 		option: "",
-		currentDay: "",
+		daysSorted: [],
 		activeId: null,
 		fakeUrl: "",
+<<<<<<< HEAD
 		facebookLink: "",
+=======
+		days: ['sat', 'sun', 'mon', 'tue', 'wed', 'thu', 'fri'],
+>>>>>>> 1891f3940aaf0142c14a3f938ac69a17f27bc56e
 	},
 	methods: {
 		onStart: function(){
@@ -66,25 +70,35 @@ var vue = new Vue({
 				var d = 0.4;
 				this.standardValue = this.standardValue + 0.05;
 				this.ii++;
-				var timeDay = this.ii%8;
-				if(timeDay == 0){
-					var dayRange = 0;
-				}else if(timeDay == 1){
-					var dayRange = 1;
-				}else if(timeDay == 2){
-					var dayRange = 1.5;
-				}else if(timeDay == 3){
-					var dayRange = 2.4;
-				}else if(timeDay == 4){
-					var dayRange = 3;
-				}else if(timeDay == 5){
-					var dayRange = 2.3;
-				}else if(timeDay == 6){
-					var dayRange = 1;
-				}else if(timeDay == 7){
-					var dayRange = 0;
-				} else {
-					var dayRange = 0;
+				var timeDay = this.ii%9;
+				switch(timeDay){
+					case 0:
+						var dayRange = 0;
+						break;
+					case 1:
+						var dayRange = 0.7;
+						break;
+					case 2:
+						var dayRange = 1.5;
+						break;
+					case 3:
+						var dayRange = 1.9;
+						break;
+					case 4:
+						var dayRange = 2.3;
+						break;
+					case 5:
+						var dayRange = 2.1;
+						break;
+					case 6:
+						var dayRange = 1.5;
+						break;
+					case 7:
+						var dayRange = 0.7;
+						break;
+					case 8:
+						var dayRange = 0.2;
+						break;
 				}
 				this.graphDegree = d * this.standardValue +  this.graphDegree + dayRange;	
 				this.graphDegree = parseFloat(this.graphDegree);
@@ -94,6 +108,7 @@ var vue = new Vue({
 				this.graphDegree =  this.graphDegree - dayRange;	
 			}
 			this.dayOne();
+			this.dayName();
 			this.standardValue = 0.2;
 			this.graphDegree = this.degree;
 			this.activeLink('link-1');
@@ -107,25 +122,35 @@ var vue = new Vue({
 				var d = 0.4;
 				this.standardValue = this.standardValue - 0.05;
 				this.ii++;
-				var timeDay = this.ii%8;
-				if(timeDay == 0){
-					var dayRange = 0;
-				}else if(timeDay == 1){
-					var dayRange = 1;
-				}else if(timeDay == 2){
-					var dayRange = 1.5;
-				}else if(timeDay == 3){
-					var dayRange = 2.4;
-				}else if(timeDay == 4){
-					var dayRange = 3;
-				}else if(timeDay == 5){
-					var dayRange = 2.3;
-				}else if(timeDay == 6){
-					var dayRange = 1;
-				}else if(timeDay == 7){
-					var dayRange = 0;
-				} else {
-					var dayRange = 0;
+				var timeDay = this.ii%9;
+				switch(timeDay){
+					case 0:
+						var dayRange = 0;
+						break;
+					case 1:
+						var dayRange = 0.7;
+						break;
+					case 2:
+						var dayRange = 1.5;
+						break;
+					case 3:
+						var dayRange = 1.9;
+						break;
+					case 4:
+						var dayRange = 2.3;
+						break;
+					case 5:
+						var dayRange = 2.1;
+						break;
+					case 6:
+						var dayRange = 1.5;
+						break;
+					case 7:
+						var dayRange = 0.7;
+						break;
+					case 8:
+						var dayRange = 0.2;
+						break;
 				}
 				this.graphDegree = d * this.standardValue +  this.graphDegree + dayRange;
 				this.graphDegree = parseFloat(this.graphDegree).toFixed(1);
@@ -165,6 +190,17 @@ var vue = new Vue({
 		daySeven: function(){
 			this.oneDay = this.weatherArray.slice(54, 63);
 			this.weatherGraph();
+		},
+		dayName: function(){
+			var today = new Date();
+			var daysSorted = [];
+
+			for(var i = 0; i < 7; i++)
+			{
+				var newDate = new Date(today.setDate(today.getDate() + 1));
+				this.daysSorted.push(this.days[newDate.getDay()]);
+			}
+
 		},
 		weatherGraph: function() {
 			var ctx = $('#myChart').get(0).getContext('2d');
@@ -208,7 +244,7 @@ var vue = new Vue({
 		activeLink(linkIdent) {
 			//console.log(linkIdent);
 			if(linkIdent != this.activeId){
-			this.activeId = this.activeId === linkIdent ? null : linkIdent
+				this.activeId = this.activeId === linkIdent ? null : linkIdent
 			}
 		},
 	},

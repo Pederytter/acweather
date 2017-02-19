@@ -57,7 +57,7 @@
 							<canvas height="200px" width="750px" id="myChart"></canvas>
 							<section class="allDays">
 								<div class="day" :class="{ active: activeId == 'link-1' }" @click.prevent="activeLink('link-1')" @click="dayOne">
-									<p>{{currentDay}}</p>
+									<p>{{daysSorted[0]}}</p>
 									<img class="weatherDay" src="http://ssl.gstatic.com/onebox/weather/64/sunny.png">
 									<div class="dayTemp">
 										<span class="dayTempMax">{{weatherArray[0]}}°</span>
@@ -65,6 +65,7 @@
 									</div>
 								</div>
 								<div class="day" :class="{ active: activeId == 'link-2' }" @click.prevent="activeLink('link-2')" @click="dayTwo">
+									<p>{{daysSorted[1]}}</p>
 									<img class="weatherDay" src="http://ssl.gstatic.com/onebox/weather/64/sunny.png">
 									<div class="dayTemp">
 										<span class="dayTempMax">{{weatherArray[9]}}°</span>
@@ -72,6 +73,7 @@
 									</div>
 								</div>
 								<div class="day" :class="{ active: activeId == 'link-3' }" @click.prevent="activeLink('link-3')" @click="dayThree">
+									<p>{{daysSorted[2]}}</p>
 									<img class="weatherDay" src="http://ssl.gstatic.com/onebox/weather/64/sunny.png">
 									<div class="dayTemp">
 										<span class="dayTempMax">{{weatherArray[17]}}°</span>
@@ -79,6 +81,7 @@
 									</div>
 								</div>
 								<div class="day" :class="{ active: activeId == 'link-4' }" @click.prevent="activeLink('link-4')" @click="dayFour">
+									<p>{{daysSorted[3]}}</p>
 									<img class="weatherDay" src="http://ssl.gstatic.com/onebox/weather/64/sunny.png">
 									<div class="dayTemp">
 										<span class="dayTempMax">{{weatherArray[25]}}°</span>
@@ -86,6 +89,7 @@
 									</div>
 								</div>
 								<div class="day" :class="{ active: activeId == 'link-5' }" @click.prevent="activeLink('link-5')" @click="dayFive">
+									<p>{{daysSorted[4]}}</p>
 									<img class="weatherDay" src="http://ssl.gstatic.com/onebox/weather/64/sunny.png">
 									<div class="dayTemp">
 										<span class="dayTempMax">{{weatherArray[33]}}°</span>
@@ -93,6 +97,7 @@
 									</div>
 								</div>
 								<div class="day" :class="{ active: activeId == 'link-6' }" @click.prevent="activeLink('link-6')" @click="daySix">
+									<p>{{daysSorted[5]}}</p>
 									<img class="weatherDay" src="http://ssl.gstatic.com/onebox/weather/64/sunny.png">
 									<div class="dayTemp">
 										<span class="dayTempMax">{{weatherArray[41]}}°</span>
@@ -100,6 +105,7 @@
 									</div>
 								</div>
 								<div class="day" :class="{ active: activeId == 'link-7' }" @click.prevent="activeLink('link-7')" @click="daySeven">
+									<p>{{daysSorted[6]}}</p>
 									<img class="weatherDay"  src="http://ssl.gstatic.com/onebox/weather/64/sunny.png">
 									<div class="dayTemp">
 										<span class="dayTempMax">{{weatherArray[49]}}</span>
