@@ -3,7 +3,7 @@
 $city = str_replace(' ', '', $_GET['city']);
 $option = $_GET['option'];
 // This is the URL you want to shorten
-$longUrl = 'malthebp.dk/eaaa/acweather/indexGoogle.php?city='.$city.'&option='.$option;
+$longUrl = 'http://cbjmedie.dk/acweather/indexGoogle.php?city='.$city.'&option='.$option;
 
 // Get API key from : http://code.google.com/apis/console/
 $apiKey = 'AIzaSyCZcJ0mw1KM-enBL1QUDHjvJdgsAlHQMwU';

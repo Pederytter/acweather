@@ -18,6 +18,7 @@ var vue = new Vue({
         fakeUrl: "",
         facebookLink: "",
         days: ['sat', 'sun', 'mon', 'tue', 'wed', 'thu', 'fri'],
+		weatherImage: '',
         
     },
     methods: {
@@ -63,17 +64,17 @@ var vue = new Vue({
                 this.degree = cityTemp.data.main.temp;
             });   
         },
-        sunny: function(){
+        sunny: function(){ //Function for warm weather
             this.option = 1;
             this.graphDegree = this.degree;
             $('.allDays').css('display', 'block');
             this.weatherArray = [];
-            for (this.i = 0; this.i < 64; this.i++){
+            for (this.i = 0; this.i < 64; this.i++){ //Math for weathergraph
                 var d = 0.4;
                 this.standardValue = this.standardValue + 0.05;
                 this.ii++;
                 var timeDay = this.ii%9;
-                switch(timeDay){
+                switch(timeDay){  //Gives the weather graph a day / night temperature
                     case 0:
                         var dayRange = 0;
                         break;
@@ -112,20 +113,22 @@ var vue = new Vue({
             this.dayOne();
             this.dayName();
             this.standardValue = 0.2;
+			this.ii = 0;
             this.graphDegree = this.degree;
             this.activeLink('link-1');
+			this.weatherImages('images/sunny.png');
         },
-        cold: function(){
+        cold: function(){ //Function for cold weather
             this.option = 2;
             this.graphDegree = this.degree;
             $('.allDays').css('display', 'block');
             this.weatherArray = [];
-            for (this.i = 0; this.i < 64; this.i++){
+            for (this.i = 0; this.i < 64; this.i++){ //Math for weathergraph
                 var d = 0.4;
                 this.standardValue = this.standardValue - 0.05;
                 this.ii++;
                 var timeDay = this.ii%9;
-                switch(timeDay){
+                switch(timeDay){   //Gives the weather graph a day / night temperature
                     case 0:
                         var dayRange = 0;
                         break;
@@ -162,10 +165,12 @@ var vue = new Vue({
             this.dayOne();
             this.dayName();
             this.standardValue = 0.2;
+			this.ii = 0;
             this.graphDegree = this.degree;
             this.activeLink('link-1');
+			this.weatherImages('images/snow_light.png');
         },
-        dayOne: function(){
+        dayOne: function(){ //slices the weatherArray into showing only day one
             this.oneDay = this.weatherArray.slice(0, 9);
             this.weatherGraph();
 
@@ -194,7 +199,7 @@ var vue = new Vue({
             this.oneDay = this.weatherArray.slice(54, 63);
             this.weatherGraph();
         },
-        dayName: function(){
+        dayName: function(){ //Names the next 7 days from the current day
             var today = new Date();
             var daysSorted = [];
 
@@ -205,7 +210,10 @@ var vue = new Vue({
             }
 
         },
-        weatherGraph: function() {
+		weatherImages: function(imagePath){ //changes the path for weather day images
+			this.weatherImage = imagePath;
+		},
+        weatherGraph: function() {  //Chartjs code (Renders the graph)
             var ctx = $('#myChart').get(0).getContext('2d');
             var myChart = new Chart(ctx, {
                 type: 'line',
@@ -250,15 +258,5 @@ var vue = new Vue({
                 this.activeId = this.activeId === linkIdent ? null : linkIdent
             }
         },
-    },
-    mounted: function(){
-        // this.$http.get('/mdu/acweather2/acweather/processLocation.php?action=2&city='+this.city).then(function(cityName){
-        // 	this.city = cityName.data.name;
-        // 	this.degree = Math.round(cityName.data.main.temp);
-        // 	this.graphDegree = Math.round(cityName.data.main.temp)
-        // 	this.wind = cityName.data.wind.speed;
-        // 	this.humidity = cityName.data.main.humidity;
-        // 	this.weatherDescrip = cityName.data.weather[0].description;
-        // });
     },
 });
