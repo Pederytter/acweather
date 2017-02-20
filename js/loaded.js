@@ -12,7 +12,7 @@ $(document).ready(function(){
                             instance._stop(1);
                             clearInterval( interval );
                         }
-                    }, 130 );
+                    }, 60 );
             }
         } );
     } );
@@ -27,12 +27,12 @@ $(document).ready(function(){
                 setTimeout(function() {
                     $("#citydegreebutton").toggleClass("loaded");
                     $("#citydegreeh3").toggleClass("loaded");
-                }, 3200);
+                }, 2200);
             } else {
                 setTimeout(function() {
                     $("#citydegreebutton").toggleClass("loaded");
                     $("#citydegreeh3").toggleClass("loaded");
-                }, 3200);
+                }, 2200);
             }
         });
     });
@@ -62,7 +62,7 @@ $(document).ready(function(){
                 $("#citydegreebutton").addClass("loaded");
                 $("#citydegreeh3").addClass("loaded");
                 $("#citydegreebutton").removeClass("enterKeyPressed");
-            }, 3200);
+            }, 2200);
         } 
     });
 

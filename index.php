@@ -4,7 +4,7 @@
         <title>AcWeather</title>
         <meta name="description" content="">
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=0.5">
         <link rel="stylesheet" type="text/css" href="css/indexstyle.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
@@ -28,14 +28,14 @@
 
                     <ul id="progressbar" class="showdesktop">
                         <li class="active">Location</li>
-                        <li>Weather</li>
+                        <li id="hidefooter">Weather</li>
                         <li>Share</li>
                     </ul>
 
                     <fieldset>
                         <h2>Choose Location</h2>
                         <div class="fieldsetwrapper">
-                            <p id="fieldsetp1">Search for a city you want to prank people in.<br> </p>
+                            <p class="fieldsetp">Search for a city you want to prank people in<br> or choose your current location.</p>
                             <input v-model="city" @keyup="getLocationKeyUp" type="text" name="location" placeholder="" id="cityinput" autocomplete="off">
                             <section id="citydegree">
                                 <h3 id="citydegreeh3"><span id="selectcitytjek">{{city}}</span>: <span>{{degree}}°</span></h3>
@@ -44,7 +44,7 @@
                         </div>
                         <button type="button" name="next" class="next action-button" id="fieldset1button">Next</button>
                     </fieldset>
-                    <fieldset>
+                    <fieldset id="fieldset2">
                         <h2>Weather Options</h2>
                         <div class="fieldsetwrapper">
                             <p>Choose whether you want to have heatweave or extreme cold. Its up to you!</p>
@@ -120,24 +120,30 @@
                                 </section>
                             </section>
                         </div>
-                        <input type="button" name="previous" class="previous action-button" value="Previous" />
 
-                        <input type="button" name="next" class="next action-button" value="Next" />
+                        <input type="button" name="previous" class="previous action-button fieldset2buttons" value="Previous" />
+
+                        <input type="button" name="next" class="next action-button fieldset2buttons" value="Next" />
+
                     </fieldset>
                     <fieldset>
                         <h2>Share Link</h2>
                         <div class="fieldsetwrapper">
-                            <p>Now it's time to share your newly made prank forecast. Choose to either share it on Facebook or get your own link, you can use copy and paste yo your friends! Have fun!</p>
+                            <p class="fieldsetp">It's time to share your newly made prank forecast. <br> Choose to either share it on Facebook or get your own link, you can copy and paste to your friends.</p>
                             <section class="shareSection">
-                                <button type="button" @click="getFakeUrl">Get url</button>
-                                <h3>Your url:<br> {{fakeUrl}}</h3>
+                                <!--<button type="button" @click="getFakeUrl">Get url</button>-->
+
+                                <button type="button" class="progress-button" data-style="slide-down" @click="getFakeUrl">Get Link</button>
+                                
+                                <h4>{{fakeUrl}}</h4>
                             </section>
                             <section v-if="fakeUrl != ''" class="shareSection">
-                                <p>Share on Facebook</p>
-                                <div class="fb-share-button" data-href="<?php $url ?>" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" :href="facebookLink">Share your link</a></div>
+                                <div class="fb-share-button" data-href="<?php $url ?>" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" :href="facebookLink" id="facebookshare">Share on Facebook</a></div>
                             </section>
                         </div>
-                        <input type="button" name="previous" class="previous action-button" value="Previous" />
+                        <input type="button" name="previous" class="previous action-button" value="Previous" id="fieldset3button"/>
+
+
                     </fieldset>
 
                 </form>
@@ -145,7 +151,7 @@
             </main>
 
             <footer>
-                <h3>Copyright © 2017 Malthe Petersen, Peter Rytter and Christian Bonde</h3>
+                <h3 id="footerh3" class="showdesktop">Copyright © 2017 Malthe Petersen, Peter Rytter and Christian Bonde</h3>
             </footer>
             <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
             <script type="text/javascript" src="js/vue.js"></script>
@@ -165,7 +171,7 @@
                     js.src = "//connect.facebook.net/da_DK/sdk.js#xfbml=1&version=v2.8&appId=428746910592865";
                     fjs.parentNode.insertBefore(js, fjs);
                 }(document, 'script', 'facebook-jssdk'));
-                
+
                 vue.onStartIp();
             </script>
         </div>
