@@ -155,6 +155,7 @@
             </footer>
             <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
             <script type="text/javascript" src="js/vue.js"></script>
+            <!-- Vue plugin for AJAX -->
             <script src="https://cdn.jsdelivr.net/vue.resource/1.2.0/vue-resource.min.js"></script>
 
             <script type="text/javascript" src="js/scripts.js"></script>
@@ -164,6 +165,7 @@
             <script src="js/loaded.js"></script>
 
             <script type="text/javascript">
+            //Create facebook share
                 (function(d, s, id) {
                     var js, fjs = d.getElementsByTagName(s)[0];
                     if (d.getElementById(id)) return;

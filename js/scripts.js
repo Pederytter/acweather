@@ -22,31 +22,31 @@ var vue = new Vue({
         
     },
     methods: {
-        onStart: function(){
-            console.log(this.city +" Onstart " + this.degree);
-            this.$http.get('/mdu/acweather2/acweather/processLocation.php?action=1&city='+this.city).then(function(cityName){
-                this.city = cityName.data.name;
-                this.degree = Math.round(cityName.data.main.temp);
-                this.graphDegree = Math.round(cityName.data.main.temp)
-                this.wind = cityName.data.wind.speed;
-                this.humidity = cityName.data.main.humidity;
-                this.weatherDescrip = cityName.data.weather[0].description;
+        onStart: function(){ //Function call on start for indexGoogle.php. 
+            this.$http.get('/mdu/acweather2/acweather/processLocation.php?action=1&city='+this.city).then(function(cityName){ //Makes AJAX call
+                this.city = cityName.data.name; //Gets cityname from API in php AJAX
+                this.degree = Math.round(cityName.data.main.temp); //Gets temperature from API in php AJAX
+                this.graphDegree = Math.round(cityName.data.main.temp) //Gets temperature from API in php AJAX
+                this.wind = cityName.data.wind.speed; //Gets windspeed from API in php AJAX
+                this.humidity = cityName.data.main.humidity; //Gets humidity from API in php AJAX
+                this.weatherDescrip = cityName.data.weather[0].description; //Gets description from API in php AJAX
             });
         },
-        onStartIp: function(){
-            this.$http.get('/mdu/acweather2/acweather/processLocation.php?action=2&city='+this.city).then(function(cityName){
-                this.city = cityName.data.name;
-                this.degree = Math.round(cityName.data.main.temp);
-                this.graphDegree = Math.round(cityName.data.main.temp)
-                this.wind = cityName.data.wind.speed;
-                this.humidity = cityName.data.main.humidity;
-                this.weatherDescrip = cityName.data.weather[0].description;
+        onStartIp: function(){ //Function call on start for index.php. 
+            this.$http.get('/mdu/acweather2/acweather/processLocation.php?action=2&city='+this.city).then(function(cityName){//Makes AJAX call
+                this.city = cityName.data.name; //Gets cityname from API in php AJAX
+                this.degree = Math.round(cityName.data.main.temp); //Gets temperature from API in php AJAX
+                this.graphDegree = Math.round(cityName.data.main.temp) //Gets temperature from API in php AJAX
+                this.wind = cityName.data.wind.speed; //Gets windspeed from API in php AJAX
+                this.humidity = cityName.data.main.humidity; //Gets humidity from API in php AJAX
+                this.weatherDescrip = cityName.data.weather[0].description; //Gets description from API in php AJAX
             });
         },
         getFakeUrl: function (){
-            this.$http.get('/mdu/acweather2/acweather/process.php?city='+this.city+'&option='+this.option).then(function(data){
-                this.fakeUrl = data.data;
-                this.facebookLink = "https://www.facebook.com/sharer/sharer.php?u=" + data.data;
+            this.$http.get('/mdu/acweather2/acweather/process.php?city='+this.city+'&option='+this.option).then(function(data){//Makes AJAX call
+                this.city = cityName.data.name; //Gets cityname from API in php AJAX
+                this.fakeUrl = data.data; //Gets all data from API in php AJAX
+                this.facebookLink = "https://www.facebook.com/sharer/sharer.php?u=" + data.data; //Creates a facebook URL for sharin
             });			
         },
         getLocation: function(){
@@ -54,14 +54,14 @@ var vue = new Vue({
                 $('#citydegreebutton').removeClass('enterKeyPressed');
             } else {
                 this.$http.get('/mdu/acweather/processLocation.php?action=2').then(function(cityName){
-                    this.city = cityName.data.name;
-                    this.degree = Math.round(cityName.data.main.temp);
+                    this.city = cityName.data.name; //Gets cityname from API in php AJAX
+                    this.degree = Math.round(cityName.data.main.temp); //Gets temperature rounded to the nearst number from API in php AJAX
                 });
             }
         },
         getLocationKeyUp: function() {
             this.$http.get('/mdu/acweather2/acweather/processLocation.php?action=1&city='+this.city).then(function(cityTemp){
-                this.degree = cityTemp.data.main.temp;
+                this.degree = cityTemp.data.main.temp; //Gets temperature from API in php AJAX
             });   
         },
         sunny: function(){ //Function for warm weather

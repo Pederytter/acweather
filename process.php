@@ -1,11 +1,11 @@
 
 <?php
-$city = str_replace(' ', '', $_GET['city']);
-$option = $_GET['option'];
+$city = str_replace(' ', '', $_GET['city']); //Deletes all spaces in a string
+$option = $_GET['option']; //Gets the option for whether its cold or warm
 // This is the URL you want to shorten
 $longUrl = 'http://cbjmedie.dk/acweather/indexGoogle.php?city='.$city.'&option='.$option;
 
-// Get API key from : http://code.google.com/apis/console/
+// Google API key 
 $apiKey = 'AIzaSyCZcJ0mw1KM-enBL1QUDHjvJdgsAlHQMwU';
 
 $postData = array('longUrl' => $longUrl, 'key' => $apiKey);
@@ -27,5 +27,5 @@ $response = curl_exec($curlObj);
 $json = json_decode($response);
 
 curl_close($curlObj);
-echo $json->id;
+echo $json->id; //returns the shorten URL
 ?>

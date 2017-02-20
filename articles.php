@@ -1,7 +1,7 @@
 <?php
 
-
-$articlesSunny = array(
+//All articles for articles, theses are multidimensional arrays, aka. array in array
+$articlesSunny = array( //Articles for option with warm
 	array('title' => 'Heat wave '.ucfirst($city).' - Wikipedia', 'url' => 'https://en.wikipedia.org/wiki/Heat_wave', 'description' => 'A heat wave is a prolonged period of excessively hot weather, which may be accompanied by ... Severe heat waves have caused catastrophic crop failures, thousands of deaths from hyperthermia, and widespread power outages due to ...'),
 	array('title' => 'National and Local Weather Forecast, Hurricane, Radar and Report', 'url' => 'https://weather.com/', 'description' => 'The Weather Channel and weather.com provide a national and local weather forecast for cities, as well as weather radar, report and hurricane coverage.'),
 	array('title' => 'Extreme weather - Climate Emergency Institute', 'url' => 'www.climateemergencyinstitute.com/extreme_weather.html', 'description' => 'The rapid increase ​​is '.ucfirst($city).' extreme weather threatens global catastrophe because all the world\'s best food producing regions are in the ...'),
@@ -10,7 +10,7 @@ $articlesSunny = array(
 	array('title' => 'Heatwave '.ucfirst($city).': catastrophic fire danger looms, residents told to leave', 'url' => 'www.theaustralian.com.au/.../heatwave-catastrophic.../b6b2205ee3...', 'description' => 'Dozens of properties could be damaged or destroyed and at least one person has treated for burns as almost 100 fires burn across '.ucfirst($city).'.'),
 	array('title' => ''.ucfirst($city).' braces for catastrophic record-breaking heatwave | Stuff.co.nz', 'url' => 'www.stuff.co.nz/.../'.ucfirst($city).'-braces-for-catastrophic-recordbreaking...', 'description' => ''.ucfirst($city).' is bracing for a "catastrophic" record heatwave that is set to swelter all weekend.')
 	);
-$articlesCold = array(
+$articlesCold = array( //Articles for option with cold
 	array('title' => 'Extreme Cold Weather Alert - City of '.ucfirst($city).'', 'url' => 'www1.'.ucfirst($city).'.ca/wps/portal/contentonly?vgnextoid...', 'description' => 'This page contains information on extreme cold weather and alerts.'),
 	array('title' => 'Winter storm '.ucfirst($city).' - Wikipedia', 'url' => 'https://en.wikipedia.org/wiki/Winter_storm', 'description' => 'A winter storm is an event in which varieties of precipitation are formed that only occur at low temperatures, such as snow or sleet, or a rainstorm where ground ...'),
 	array('title' => 'Snowstorms & Extreme Cold | Ready.gov', 'url' => 'https://www.ready.gov/winter-weather', 'description' => 'This page explains what actions to take when you receive a winter weather storm alert from the National Weather Service for your local area and what to do ...'),
