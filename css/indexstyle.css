@@ -6,15 +6,6 @@
 @import url(http://fonts.googleapis.com/css?family=Montserrat);
 
 body {
-    background: linear-gradient(90deg, #7590ad, #96ccaf, #9fc9e3, #74cdbc);
-    background-size: 800% 800%;
-    /*
-    -webkit-animation: bodybg 45s ease infinite;
-    -moz-animation: bodybg 45s ease infinite;
-    -o-animation: bodybg 45s ease infinite;
-    animation: bodybg 45s ease infinite;
-    */
-
     font-family: montserrat, arial, verdana;
     overflow-x: hidden;
 }
@@ -52,6 +43,23 @@ header {
 }
 h1{
     color: #fff;
+}
+
+#logodesk {
+    width: 80px;
+    float: left;
+    margin-right: 10px;
+    margin-top: 8px;
+}
+#logomobil {
+    width: 80px;
+    float: left;
+    margin-right: 10px;
+    margin-top: 22px;
+}
+#logomobilwrapper {
+    padding-top: 30px;
+    padding-left: 10px;
 }
 
 
@@ -214,17 +222,17 @@ h1{
 /* -- radio buttons -- */
 
 .day {
-	display: inline-block;
+    display: inline-block;
     width: 12%;
     padding: 7px 5px 15px 5px;
 }
 
 .allDays {
-	display: none;
+    display: none;
 }
 
 .dayTemp {
-	font-size: 13px;
+    font-size: 13px;
     color: #404040;
 }
 
@@ -247,7 +255,7 @@ label > img:hover {
 }
 
 label > .weatherDay{
-	padding: 0px 0%;
+    padding: 0px 0%;
     width: 8%;
     margin: 0 2%;
 }
@@ -295,6 +303,10 @@ label > input:checked + img{
     transition: 1s;
 }
 
+#citydegreeh3.displaytext {
+    display: block;
+}
+
 #citydegreeh3.loaded {
     transform: translateX(70%);
 }
@@ -303,8 +315,23 @@ label > input:checked + img{
     transform:translateX(-50%);
 }
 
+/* -- share -- */
+
+.shareSection {
+    margin: 25px 0px;
+}
+
 
 @media all and (min-width: 0px) {
+    footer > h3 {
+        text-align: center;
+        position: fixed;
+        bottom: 15px;
+        width: 100%;
+        font-size: 0.8em;
+        color: #1a415d;
+        opacity: 0.99;
+    }
     #weatherform {
         width: 100%;
         height: 90vh;
@@ -325,7 +352,13 @@ label > input:checked + img{
         display: block;
     }
     body {
-
+        background: white;
+    }
+    h1{
+        color: #1a3d60;
+    }
+    .hidemobil {
+        display: none;
     }
 }
 
@@ -335,6 +368,20 @@ label > input:checked + img{
 
 
 @media all and (min-width: 768px) {
+    .hidemobil {
+        display: block;
+    }
+    h1{
+        color: #fff;
+    }
+    footer > h3 {
+        text-align: center;
+        position:inherit;
+        margin-top: -35px;
+        font-size: 0.8em;
+        color: white;
+        opacity: 0.7;
+    }
     #weatherform {
         height: 600px;
         width: 95%;
@@ -356,10 +403,22 @@ label > input:checked + img{
     .showmobil {
         display: none;
     }
+    body {
+        background: linear-gradient(90deg, #7590ad, #96ccaf, #9fc9e3, #74cdbc);
+        background-size: 600%;
+
+        /*
+        -webkit-animation: bodybg 45s ease infinite;
+        -moz-animation: bodybg 45s ease infinite;
+        -o-animation: bodybg 45s ease infinite;
+        animation: bodybg 45s ease infinite;
+        */
+
+        font-family: montserrat, arial, verdana;
+        overflow-x: hidden;
+    }
 }
 
-.shareSection {
-    margin: 25px 0px;
-}
+
 
 
