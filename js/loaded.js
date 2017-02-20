@@ -66,7 +66,7 @@ $(document).ready(function(){
         } 
     });
 
-    $("#cityinput").keyup(function(e) {
+    $("#cityinput").keydown(function(e) {
         if(e.which == 8 || e.which == 46) {
             $("#citydegreebutton").removeClass("loaded");
             $("#citydegreeh3").removeClass("loaded");

@@ -35,14 +35,14 @@
                     <fieldset>
                         <h2>Choose Location</h2>
                         <div class="fieldsetwrapper">
-                            <p>Choose what danish city you want to prank people in. You can either write a city or get your current. </p>
+                            <p id="fieldsetp1">Search for a city you want to prank people in.<br> </p>
                             <input v-model="city" @keyup="getLocationKeyUp" type="text" name="location" placeholder="" id="cityinput" autocomplete="off">
                             <section id="citydegree">
                                 <h3 id="citydegreeh3"><span id="selectcitytjek">{{city}}</span>: <span>{{degree}}°</span></h3>
                                 <button id="citydegreebutton" type="button" class="progress-button" data-style="fill" data-horizontal v-on:click="getLocation">Current Location</button>
                             </section>
                         </div>
-                        <button type="button" name="next" class="next action-button">Next</button>
+                        <button type="button" name="next" class="next action-button" id="fieldset1button">Next</button>
                     </fieldset>
                     <fieldset>
                         <h2>Weather Options</h2>

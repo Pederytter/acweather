@@ -79,7 +79,7 @@ h1{
 #weatherform fieldset {
     background: white;
     border: 0 none;
-    border-radius: 3px;
+    border-radius: 4px;
     box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
     padding: 20px 30px;
     box-sizing: border-box;
@@ -90,20 +90,28 @@ h1{
     /*stacking fieldsets above each other*/
     position: relative;
 }
+/* -- weatherform -- */
+#weatherform fieldset p {
+    line-height: 1.5em;
+}
+#fieldsetp1 {
+    margin-top: 60px;
+}
+
 /*Hide all except first fieldset*/
 #weatherform fieldset:not(:first-of-type) {
     display: none;
 }
 
 .fieldsetwrapper {
-    height: 65%; 
+    height: 70%; 
 }
 /*inputs*/
 #weatherform input {
     padding: 15px;
     border: 1px solid #ccc;
     border-radius: 3px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     margin-top: 20px;
     width: 80%;
     box-sizing: border-box;
@@ -130,12 +138,17 @@ h1{
     border-radius: 1px;
     cursor: pointer;
     padding: 10px 5px;
-    margin: 10px 5px;
-    margin-top: 30px;
+    margin: 20px 5px;
+    
 }
 #weatherform .action-button:hover, #weatherform .action-button:focus {
     background: #2473ad;
 }
+
+.next.action-button#fieldset1button {
+    margin-top: 0px;
+}
+
 /*headings*/
 #weatherform h2 {
     font-size: 25px;
@@ -383,17 +396,17 @@ label > input:checked + img{
         opacity: 0.7;
     }
     #weatherform {
-        height: 600px;
+        height: 650px;
         width: 95%;
-        max-width: 900px;
+        max-width: 1000px;
         margin: 50px auto;
-        margin-top: 15vh;
+        margin-top: 8vh;
     }
 
     #weatherform fieldset {
         width: 90%;
         margin: 0 5%;
-        height: 500px;
+        height: 550px;
         box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
         padding: 20px 30px;
     }
