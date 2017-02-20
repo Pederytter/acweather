@@ -16,9 +16,7 @@ var vue = new Vue({
         daysSorted: [],
         activeId: null,
         fakeUrl: "",
-        
         facebookLink: "",
-        
         days: ['sat', 'sun', 'mon', 'tue', 'wed', 'thu', 'fri'],
         
     },
@@ -106,7 +104,7 @@ var vue = new Vue({
                 }
                 this.graphDegree = d * this.standardValue +  this.graphDegree + dayRange;	
                 this.graphDegree = parseFloat(this.graphDegree);
-                this.graphDegree = this.graphDegree.toFixed(2);
+                this.graphDegree = this.graphDegree.toFixed(1);
                 this.weatherArray.push(this.graphDegree);	
                 //console.log(this.graphDegree);		
                 this.graphDegree =  this.graphDegree - dayRange;	
@@ -162,6 +160,7 @@ var vue = new Vue({
                 this.graphDegree =  this.graphDegree - dayRange;	
             }
             this.dayOne();
+            this.dayName();
             this.standardValue = 0.2;
             this.graphDegree = this.degree;
             this.activeLink('link-1');

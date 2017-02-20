@@ -267,7 +267,12 @@ a.btn {
 
 .day {
     display: inline-block;
-    width: 12%;
+    width: 13.6%;
+    text-align: center;
 }
 
-
+.allDays .active {
+    background-color: #f1f1f1;
+    border: 1px solid #d2d2d2;
+    border-radius: 3px;
+}
